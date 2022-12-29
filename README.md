@@ -29,3 +29,15 @@ Recursive feature elimination was used to find the most important features. The 
 Linear Regression (LR) was taken as the baseline model for evaluating the performance of the other models. After selecting a set of features using recursive feature elimination and Lasso, several machine learning models were considered in order to find the optimal one including random forest regressor (RF), Support Vector Regression (SVR), Gradient Boosting Tree Ensemble (GB) and extreme gradient boosting (XGBoost).
 
 The RandomizedSearchCV function from scikit learn was used to conduct randomized search on hyper parameters with 2-fold cross validation and 5 iterations for each model. The hyperparameters that resulted in minimizing the root mean squared error (RMSE) were selected.
+
+## Results
+
+| Model | MSE | RMSE | MAE |
+|-|-|-|-|
+| **LR** | 0.202 | 0.449 | 0.322 |
+| **RF** | 0.193 | 0.440 | 0.314 |
+| **SVR** | 0.207 | 0.455 | 0.323 |
+| **GB** | 0.125 | 0.353 | 0.247 |
+| **XGB** | 0.143 | 0.378 | 0.266 |
+
+Mean squared error (MSE), root mean squared error (RMSE) and mean absolute error (MAE) were used to evaluate the models on the test set. The best performing model is again the Gradient Boosting model since it achieved the lowest mean square error (MSE), root mean square error (RMSE) and mean absolute error (MAE) of 0.125, 0.353, and 0.247 respectively compared to the XGBoost model that achieved a MSE, RMSE, and MAE of 0.143, 0.378, and 0.266 respectively. Therefore, the Gradient Boosting model must be used in the Optimal Pricing Recommending System to help the property renter to price his listing appropriately. 
